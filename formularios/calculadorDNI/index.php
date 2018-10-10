@@ -2,9 +2,9 @@
 $dni = '';
 $letra = '';
 
+// http://localhost/entornoServidor/formularios/calculadorDNI/
 
-
-if(isset($_POST['dni'])){
+if( isset($_POST['dni'])){
     $dni = $_POST['dni'];
 
     if( $dni == ""){
@@ -14,7 +14,7 @@ if(isset($_POST['dni'])){
     }
 
     function calcularLetraDNI($dni){
-        global $letra;
+        // global $letra;
         if(!is_int(intval($dni))){
             echo "Error";
         } else if($dni>=1000000 && $dni<=100000000){
@@ -28,7 +28,8 @@ if(isset($_POST['dni'])){
         }
         return $letra;
     }
-    calcularLetraDNI($dni);
-    require_once 'form_dni.html';
+    $letra = calcularLetraDNI($dni);
+    
 }
+require_once 'form_dni.php'; // Require_once hace como si la parte de HTML estuviera ahí
 ?>

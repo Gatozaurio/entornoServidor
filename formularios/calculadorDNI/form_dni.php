@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Calcula la letra del DNI</h1>
-        <form action="" method="post">
+        <form action="" method="post"> <!-- Al no poner action coge el script del index-->
             <label for="name">Introduzca su número de DNI: </label>
             <input type="text" name="dni">
 

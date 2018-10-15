@@ -13,10 +13,10 @@
     <form action="" method="post">
 
         <label for="nombre">Nombre: </label>
-        <input type="text" name="nombre" pattern="[a-zA-Z ]+"><br /><br />
+        <input type="text" name="nombre" ><br /><br /> <!-- pattern="[a-zA-Z ]+" -->
 
         <label for="apellidos">Apellidos: </label>
-        <input type="text" name="apellidos" pattern="[a-zA-Z ]+"><br /><br />
+        <input type="text" name="apellidos" ><br /><br /><!-- pattern="[a-zA-Z ]+" -->
 
         <label for="edad">Edad: </label>
         <input type="number" name="edad"><br /><br />

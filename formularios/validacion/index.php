@@ -31,8 +31,8 @@ if( isset($_POST['form_alta']) ){
     }
 
     // Validación
-    if( !preg_match("/[a-zA-Z ]+/", $nombre) ){ // Encontrar la solución a esto
-        echo "El campo nombre sólo acepta letras (mayúsculas, minúsculas, sin tilde) y espacios.";
+    if( !preg_match("/^[a-zA-Z ]+$/", $nombre) ){ // Encontrar la solución a esto
+        echo "El campo nombre sólo acepta letras (mayúsculas, minúsculas, sin tilde) y espacios."; // !preg_match("/[a-zA-Z ]+/", $nombre || páginas chulas: https://regexr.com/ www.phpliveregex.com
     }
 
     require_once 'form_sended.inc.php';

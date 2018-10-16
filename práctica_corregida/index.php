@@ -1,7 +1,10 @@
 <?php
 
+
+
 require_once 'constantes.php';
 require_once 'funciones.php';
+
 
 $message = "";
 

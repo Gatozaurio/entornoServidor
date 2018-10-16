@@ -13,7 +13,7 @@
 function calcularImporteConsumo($consumo){
     if($consumo <= FRANJA1){
         // Importe menor que FRANJA1 (100)
-        $importe = $consumo * IMPORTE_MENOR_DRANJA1;
+        $importe = $consumo * IMPORTE_MENOR_FRANJA1;
     }else if($consumo <= FRANJA2){
         // Importe menor que FRANJA2 (500)
         $importe = FRANJA1 * IMPORTE_MENOR_FRANJA1 +
@@ -32,6 +32,10 @@ function calcularImporteConsumo($consumo){
     }
 
     return $importe;
+}
+
+function calcularImporteConsumoBucle($consumo){
+    
 }
 
 ?>

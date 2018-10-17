@@ -18,6 +18,13 @@ if( isset($_POST['send']) ){
     if( !preg_match("/^[a-zA-Z\d_]*$/", $username)){
         $error['username']['no_valid'] = "Los nombres de usuario sólo pueden contener letras (mayúsculas y minúsculas), números y guiones bajos.";
     }
+
+    // Validar que la contraseña sea segura
+    if( !preg_match("/^(?=.*[a-z].*[a-z].*[a-z])(?=.*[A-Z].*[A-Z].*[A-Z])(?=.*[0-9].*[0-9].*[0-9]).*$/", $pass) ){
+        $error['pass']['no_valid'] = "La contraseña debe tener al menos 3 minúsculas, 3 mayúsculas y 3 números.";
+    }
+    // ^.*[a-z]{3,}$
+
     // Validar longitudes de los campos
     if( strlen($username) < 3 ){
         $error['username']['too_short'] = "El nombre de usuario debe tener al menos 3 caracteres.";
@@ -36,10 +43,11 @@ if( isset($_POST['send']) ){
     die();
 }
 
-/* if( !isset($error) ){
+if( !isset($error) ){
+    
     require_once 'views/data.inc.php';
 } else {
     require_once 'views/form.inc.php';
-} */
+}
 
 ?>

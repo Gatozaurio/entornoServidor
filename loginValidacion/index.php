@@ -15,15 +15,14 @@ if( isset($_POST['send']) ){
     }
 
     // Validar que el usuario es correcto
-    if( !preg_match("/^[a-zA-Z\d_]*$/", $username)){
+    if( !is_string($username) || !preg_match("/^[a-zA-Z\d_]*$/", $username)){
         $error['username']['no_valid'] = "Los nombres de usuario sólo pueden contener letras (mayúsculas y minúsculas), números y guiones bajos.";
     }
 
     // Validar que la contraseña sea segura
     if( !preg_match("/^(?=.*[a-z].*[a-z].*[a-z])(?=.*[A-Z].*[A-Z].*[A-Z])(?=.*[0-9].*[0-9].*[0-9]).*$/", $pass) ){
         $error['pass']['no_valid'] = "La contraseña debe tener al menos 3 minúsculas, 3 mayúsculas y 3 números.";
-    }
-    // ^.*[a-z]{3,}$
+    } // "/^(?=(.*?[A-Z]){3})(?=(.*?[a-z]){3})(?=(.*?\d){3})[0-9a-zA-Z]{9,}$/"
 
     // Validar longitudes de los campos
     if( strlen($username) < 3 ){

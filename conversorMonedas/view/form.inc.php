@@ -39,7 +39,7 @@
                 <option value="gbp">GBP £</option>
                 <option value="jpy">JPY ¥</option>
             </select>
-            <input type="text" name="resultado" value="<?=$resultadoCantidad?>" placeholder="Resultado" readonly="readonly">
+            <input type="text" name="resultado" value="<?=$resultadoCantidad?>" readonly="readonly">
             <p>
             <input type="submit" name="calcular" value="Calcular cambio">
             <p>

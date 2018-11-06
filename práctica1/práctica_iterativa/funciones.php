@@ -9,7 +9,6 @@
  * @return float Importe en euros del consumo de agua.
  */
 
- // Hacer esto con un bucle
 function calcularImporteConsumo($consumo){
     $tarifas = [0.15, 0.20, 0.35, 0.80];
     $stages = [0, 100, 500, 1000];
@@ -27,7 +26,17 @@ function calcularImporteConsumo($consumo){
 }
 
 function calcularImporteConsumoBucle($consumo){
-    
+    global $taxes;
+    $total = 0;
+
+    foreach($taxes as $limit => $percentage){
+        if($consumo > $limit){
+            $diff = $consumo - $limit;
+            $consumo -= $diff;
+            $total += $diff * $percentage;
+        }
+    }
+    return $total;
 }
 
 ?>

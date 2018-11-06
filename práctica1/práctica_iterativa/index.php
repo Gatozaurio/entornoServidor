@@ -22,7 +22,8 @@ if( isset($_GET['consumo']) ){
         $message = 'Error3: No se puede introducir una cantidad negativa de consumo';
     }else {
         // Realizar el cálculo
-        $importe = calcularImporteConsumo($consumo);
+        // $importe = calcularImporteConsumo($consumo);
+        $importe = calcularImporteConsumoBucle($consumo);
 
         $message = "Ha consumido {$consumo} m<sup>3</sup> con un coste de de {$importe} €.";
     }
